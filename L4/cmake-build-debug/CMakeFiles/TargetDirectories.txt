@@ -1,0 +1,3 @@
+D:/Git/CODE/Learn C/L4/cmake-build-debug/CMakeFiles/L4.dir
+D:/Git/CODE/Learn C/L4/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Git/CODE/Learn C/L4/cmake-build-debug/CMakeFiles/rebuild_cache.dir
