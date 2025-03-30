@@ -2,6 +2,7 @@
 
 int sum_of_digi(int input_number)
 {
+
     if (input_number < 10) return input_number ;
     else return input_number % 10 + sum_of_digi(input_number/10) ;
     
