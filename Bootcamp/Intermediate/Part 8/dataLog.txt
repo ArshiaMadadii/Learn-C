@@ -1,0 +1,17 @@
+date = Apr  2 2025	Time = 12:53:24
+
+Voltage = 0v
+Voltage = 1v
+Voltage = 2v
+Voltage = 3v
+Voltage = 4v
+Voltage = 5v
+Voltage = 6v
+Voltage = 7v
+Voltage = 8v
+Voltage = 9v
+Voltage = 10v
+Voltage = 11v
+Voltage = 12v
+Finish Time = 12:53:24
+
