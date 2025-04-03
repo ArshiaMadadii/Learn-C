@@ -25,10 +25,14 @@ int display_menu(void) {
     printf("\t\t\t 3-Exit\n");
     printf("\n\n\t\t\t Your choose : ");
     scanf("%d", &option);
-    
+    if(option > 3 )
+    {
+         printf("Please select the appropriate option (options 1 to 3)\n");
+        return 0;
+    }
+    else return option;
     #ifdef DEBUG_DISPLAY
         printf("your option : %d", option);
     #endif
 
-    return option;
 }
