@@ -4,6 +4,5 @@
 
 int main() {
 
-    printf("option = %d", display_menu());
-    return 0;
+    check_option(display_menu());
 }

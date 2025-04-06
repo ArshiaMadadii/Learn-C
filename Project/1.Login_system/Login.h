@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <windows.h>
 
-typedef struct 
+struct user 
 {
     char name[50];
     char email[50];
@@ -12,11 +12,14 @@ typedef struct
     char phone_number[50];
     char username[50];
 
-}user;
+};
 
 
 int display_menu(void);
 
 void take_input(char ch[50]);
+
+
+void check_option(int input_number);
 
 #endif
