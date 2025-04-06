@@ -17,4 +17,6 @@ typedef struct
 
 int display_menu(void);
 
+void take_input(char ch[50]);
+
 #endif

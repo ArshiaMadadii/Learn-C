@@ -36,3 +36,11 @@ int display_menu(void) {
     #endif
 
 }
+
+/******************************************
+               input
+******************************************/
+void take_input(char ch[50])
+{
+fgets(ch,50,stdin);
+}
