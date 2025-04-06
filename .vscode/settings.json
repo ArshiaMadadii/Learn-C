@@ -1,7 +1,8 @@
 {
     "files.associations": {
         "string.h": "c",
-        "login.h": "c"
+        "login.h": "c",
+        "Login.H": "cpp"
     },
     "cmake.ignoreCMakeListsMissing": true
 }
