@@ -9,9 +9,14 @@
 #define DEBUG_SINGUP
 //#undef DEBUG_SINGUP
 
+#define DEBUG_LOGIN
+//#undef  DEBUG_LOGIN
+
 struct user user;
 char confirm_password[50];
 FILE *file_pointer;
+
+int user_found;
 
 /******************************************
                Display menu
@@ -94,7 +99,7 @@ void verify_password_then_register(char password[50] ,char confirm_password[50])
 {
     if(!(strcmp(password,confirm_password)))//check password
     {
-        file_pointer = fopen("Users.txt","a+");
+        file_pointer = fopen("Users.dat","a+");
         fwrite(&user,sizeof(struct user),1,file_pointer);
         if (fwrite != 0)
         {   
@@ -162,13 +167,73 @@ void check_option(int input_number)
         printf("\n  %s ,%s ,%s ,%s ,%s ,%s",user.name,user.email,user.phone_number
         ,user.username ,user.password,confirm_password);
         printf("\n\n---------------------------");
+
     #endif
+
     }
         break;
+
     case 2 :
     {
+        char username_LOGIN[50];
+        char password_LOGIN[50];
         
         system("cls");
+
+        printf("\n\n\t\t\t+----------------+\n");
+        printf("\t\t\t|      Login     |\n");
+        printf("\t\t\t+----------------+\n");
+    
+        printf("\n\t\t\tEnter your username : ");
+        take_input(username_LOGIN);
+        printf("\t\t\tEnter your password : ");
+        password(password_LOGIN);
+
+        file_pointer = fopen("Users.dat","r");
+        
+        while (fread(&user,sizeof(struct user),1,file_pointer))
+        {
+            if (!strcmp(username_LOGIN,user.username))
+            {
+                if (!strcmp(password_LOGIN,user.password))
+                {
+                    system("color 0A");//Green
+                    printf("\n\n\t\t\tWelcome %s ",user.name);
+                    Sleep(5000);
+                    system("color 0b");//blue tetminal
+                    printf("\n\n\t\t\tName     : %s",user.name);
+                    printf("\n\t\t\tPhone    : %s",user.phone_number);
+                    printf("\n\t\t\tUsername : %s",user.username);
+                    printf("\n\t\t\tPassword : %s\n\n",user.password);
+                }
+                else
+                {
+                    system("color 4F");//red
+                    printf("\n\n\t\t\tThe password is invalid!\n");
+                    Beep(750 , 500);
+                    printf("\n\n\t\t\tThe password is invalid!\n\n");
+                    Beep(750 , 500);
+                        #ifdef DEBUG_LOGIN
+            
+                            printf("\n\n---------------------------");
+                            printf("\n  User name : %s\n  Password : %s\n  Login passsword  : %s ",
+                                user.username ,user.password,password_LOGIN);
+                            printf("\n\n---------------------------");
+                    
+                        #endif
+                    }
+                user_found = 1 ;
+                }
+                
+        }
+
+        if (!user_found)
+        {
+            printf("\n\n\t\t\tUser is not registered!\n\n");
+        }
+
+        fclose(file_pointer);
+        break;
     }
         break;
     case 3 :
