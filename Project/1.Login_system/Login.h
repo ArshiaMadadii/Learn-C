@@ -8,6 +8,7 @@
 #include <windows.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 #include <conio.h>
 
 
@@ -30,5 +31,5 @@ void take_input(char ch[50]);
 void check_option(int input_number);
 
 void password(char password[50]);
-
+void verify_password_then_register(char password[50] ,char confrim_password[50]);
 #endif
