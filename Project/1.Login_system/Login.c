@@ -53,6 +53,39 @@ fgets(ch,50,stdin);
 }
 
 /******************************************
+        Password
+******************************************/
+
+
+void password(char password[50])
+{
+    int i = 0;
+    char input_password;
+    /*take password*/
+    while (1)
+    {
+        input_password = getch();
+        if ( input_password  == ENTER ||  input_password == TAB)
+        {
+            password[i] = '\0';
+            break;
+        }
+
+        else if (( input_password == BACK_SPACE ) && ( i > 0 ))
+        {
+                i--;
+                printf("\b \b");      
+        }
+                
+        else
+        {
+            password[i++] = input_password;
+            printf("*");
+        }
+        
+    }
+}
+/******************************************
                check option
                menu
 ******************************************/
@@ -77,9 +110,9 @@ void check_option(int input_number)
     printf("\n\t\t\tEnter your username : ");
     take_input(user.username);
     printf("\n\t\t\tEnter your password : ");
-    take_input(user.password);
+    password(user.password);
     #ifdef DEBUG_SINGUP
-        printf("%s , %s , %s , %s ,%s",user.name,user.email,user.phone_number
+        printf("%s ,%s ,%s ,%s ,%s",user.name,user.email,user.phone_number
         ,user.username ,user.password);
     #endif
     }

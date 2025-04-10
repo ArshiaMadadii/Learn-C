@@ -1,8 +1,15 @@
 #ifndef _LOGIN_H_
 #define _LOGIN_H_
 
-#include <stdio.h>
+#define ENTER      13 //ascii table
+#define TAB         9 //ascii table
+#define BACK_SPACE  8 //ascii table
+
 #include <windows.h>
+#include <stdio.h>
+#include <string.h>
+#include <conio.h>
+
 
 struct user 
 {
@@ -21,5 +28,7 @@ void take_input(char ch[50]);
 
 
 void check_option(int input_number);
+
+void password(char password[50]);
 
 #endif
