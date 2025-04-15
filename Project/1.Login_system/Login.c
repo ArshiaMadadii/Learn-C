@@ -240,6 +240,10 @@ void check_option(int input_number)
     {
         
         system("cls");
+        
+        printf("\n\n\t\t\tlinkedin.com/in/arshiamadadi\n\n");
+        printf("\t\t\tgithub.com/ArshiaMadadii\n\n");
+        printf("\n\n\t\t\tCome back soon...\n\n");
     }
         break;
     }
